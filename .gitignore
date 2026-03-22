@@ -1,0 +1,17 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Next.js
+.next/
+out/
+build/
+.env*.local
+
+# OS
+.DS_Store
+*.pem
+
+# Typescript
+*.tsbuildinfo

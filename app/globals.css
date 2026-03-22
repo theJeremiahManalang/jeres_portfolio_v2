@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #f5f3ef;
+    --surface: #faf9f7;
+    --surface-2: #f0ede8;
+    --border: #e2ddd6;
+    --border-2: #ccc7be;
+    --ink: #1a1714;
+    --ink-2: #4a4540;
+    --ink-3: #8a837a;
+    --accent: #1c3a5e;
+    --accent-light: #e8eef5;
+    --accent-mid: #b8cde0;
+    --gold: #b8960c;
+    --gold-light: #f7f1dc;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    @apply rounded-2xl transition-shadow duration-200;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .tag {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--ink-2);
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-[10px] px-2 py-0.5 rounded-md transition-colors duration-150 cursor-default select-none;
+  }
+
+  .tag:hover {
+    border-color: var(--accent-mid);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .section-label {
+    color: var(--ink-3);
+    font-family: 'JetBrains Mono', monospace;
+    @apply text-[10px] font-semibold tracking-widest uppercase mb-3;
+  }
+
+  .divider {
+    border-color: var(--border);
+    @apply border-t my-4;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    @apply text-white text-[12.5px] font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-150 no-underline;
+  }
+
+  .btn-primary:hover {
+    background: #162e4c;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(28, 58, 94, 0.28);
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--border-2);
+    color: var(--ink-2);
+    @apply text-[12.5px] font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-150 no-underline bg-transparent;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent-mid);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+}
+
+/* Staggered animation helpers */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+
+/* Scrollbar */
+::-webkit-scrollbar { display: none; }
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
