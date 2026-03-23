@@ -50,7 +50,7 @@ export default function MobileNav() {
             <span
               style={{ color: "white", fontWeight: 700, fontSize: "9px", fontFamily: "'JetBrains Mono', monospace" }}
             >
-              RD
+              JM
             </span>
           </div>
           <p
@@ -77,48 +77,45 @@ export default function MobileNav() {
       </div>
 
       {/* Profile slide-down */}
-      {open === "profile" && (
-        <div
-          className="min-[1600px]:hidden flex flex-col relative overflow-y-auto"
-          style={{
-            background: "var(--surface)",
-            borderBottom: "1px solid var(--border)",
-            maxHeight: "75vh",
-            padding: "32px 20px 20px 20px",
-          }}
+      <div
+        className={`fixed top-0 left-0 h-screen w-[280px] z-50 overflow-y-auto transition-transform duration-300 ${open === "profile" ? "translate-x-0" : "-translate-x-full"
+          }`}
+        style={{
+          background: "var(--surface)",
+          borderRight: "1px solid var(--border)",
+          padding: "32px 20px 20px 20px",
+        }}
+      >
+        <button
+          onClick={() => setOpen(null)}
+          className="absolute top-4 right-4 z-10"
+          style={{ background: "transparent", border: "none", cursor: "pointer", color: "var(--ink-3)" }}
         >
-          <button
-            onClick={() => setOpen(null)}
-            className="absolute top-4 right-4 z-10"
-            style={{ background: "transparent", border: "none", cursor: "pointer", color: "var(--ink-3)" }}
-          >
-            <CloseIcon />
-          </button>
-          <LeftSidebar />
-        </div>
-      )}
+          <CloseIcon />
+        </button>
+        <LeftSidebar />
+      </div>
+
 
       {/* Stack slide-down */}
-      {open === "stack" && (
-        <div
-          className="min-[1600px]:hidden flex flex-col relative overflow-y-auto"
-          style={{
-            background: "var(--surface)",
-            borderBottom: "1px solid var(--border)",
-            maxHeight: "75vh",
-            padding: "32px 20px 20px 20px",
-          }}
+      <div
+        className={`fixed top-0 right-0 h-screen w-[280px] z-50 overflow-y-auto transition-transform duration-300 ${open === "stack" ? "translate-x-0" : "translate-x-full"
+          }`}
+        style={{
+          background: "var(--surface)",
+          borderLeft: "1px solid var(--border)",
+          padding: "32px 20px 20px 20px",
+        }}
+      >
+        <button
+          onClick={() => setOpen(null)}
+          className="absolute top-4 right-4 z-10"
+          style={{ background: "transparent", border: "none", cursor: "pointer", color: "var(--ink-3)" }}
         >
-          <button
-            onClick={() => setOpen(null)}
-            className="absolute top-4 right-4 z-10"
-            style={{ background: "transparent", border: "none", cursor: "pointer", color: "var(--ink-3)" }}
-          >
-            <CloseIcon />
-          </button>
-          <RightSidebar />
-        </div>
-      )}
+          <CloseIcon />
+        </button>
+        <RightSidebar />
+      </div>
     </>
   );
 }
