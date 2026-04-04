@@ -115,16 +115,16 @@ export default function LeftSidebar() {
       >
         {profile.name}
       </h1>
-      <p className="text-[12px] font-medium mb-1" style={{ color: "var(--accent)" }}>
+      <p className="text-[13px] font-semibold mb-2" style={{ color: "var(--accent)" }}>
         {profile.title}
       </p>
-      <div className="flex items-center gap-1 text-[11px] mb-5" style={{ color: "var(--ink-3)" }}>
+      <div className="flex items-center gap-1.5 text-[12px] mb-4 font-medium" style={{ color: "var(--ink-2)" }}>
         <IconPin />
         {profile.location}
       </div>
 
       {/* CTA buttons */}
-      <div className="flex flex-col gap-2 mb-5">
+      <div className="flex flex-col gap-2">
         <a href={`mailto:${profile.email}`} className="btn-primary">
           <IconMail />
           Get in Touch
@@ -142,7 +142,7 @@ export default function LeftSidebar() {
       <div className="divider" />
 
       {/* Contact details */}
-      <div className="flex flex-col gap-2.5 mb-5">
+      <div className="flex flex-col gap-2">
         <p className="section-label">Contact</p>
         <a href={`tel:${profile.phone}`} className="group flex items-center gap-2 text-[12px] no-underline transition-colors" style={{ color: "var(--ink-2)" }}>
           <span style={{ color: "var(--ink-3)" }}><IconPhone /></span>

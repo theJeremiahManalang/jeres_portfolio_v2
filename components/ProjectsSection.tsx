@@ -1,53 +1,35 @@
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "@/data/portfolio";
-
-const LockIcon = () => (
-  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-  </svg>
-);
-
-const LinkIcon = () => (
-  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-    <polyline points="15 3 21 3 21 9"/>
-    <line x1="10" y1="14" x2="21" y2="3"/>
-  </svg>
-);
+import { Lock, ExternalLink, X } from "lucide-react";
 
 export default function ProjectsSection() {
   const [isExpanded, setIsExpanded] = useState(false);
-  
-  const visibleProjects = isExpanded ? projects : projects.slice(0, 2);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  const handleProjectClick = (p: typeof projects[0]) => {
-    if (p.isPrivate) {
-      alert("This project is confidential and locked.");
-    } else if (p.link) {
-      window.open(p.link, "_blank");
-    }
-  };
+  const visibleProjects = isExpanded ? projects : projects.slice(0, 2);
+  const selectedProject = projects.find(p => p.id === selectedId);
 
   return (
     <section>
-      <div className="rounded-2xl" style={{ border: "1px solid var(--border)", background: "var(--surface)" }}>
-        <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: "1px solid var(--border)" }}>
+      <div className="rounded-2xl relative" style={{ border: "1px solid var(--border)", background: "var(--surface)" }}>
+        <div className="px-6 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid var(--border)" }}>
           <h2
-            className="font-semibold tracking-tight mb-0"
+            className="font-bold tracking-tight mb-0"
             style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px", color: "var(--ink)" }}
           >
             Recent Projects
           </h2>
         </div>
         <div className="p-6 flex flex-col gap-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
             {visibleProjects.map((p) => (
-              <div
+              <motion.div
+                layoutId={`project-${p.id}`}
                 key={p.id}
-                onClick={() => handleProjectClick(p)}
-                className="p-4 rounded-xl transition-all duration-150 cursor-pointer flex flex-col"
+                onClick={() => setSelectedId(p.id)}
+                className="p-5 rounded-xl transition-all duration-200 cursor-pointer flex flex-col group"
                 style={{
                   border: "1px solid var(--border)",
                   background: "var(--surface-2)",
@@ -68,48 +50,51 @@ export default function ProjectsSection() {
                 }}
               >
                 {/* Title row */}
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <h3 className="text-[13px] font-semibold tracking-tight leading-snug" style={{ color: "var(--ink)" }}>
+                <div className="flex items-start justify-between gap-2 mb-1.5">
+                  <h3 className="text-[14px] font-bold tracking-tight leading-snug" style={{ color: "var(--ink)" }}>
                     {p.title}
                   </h3>
                   {p.isPrivate ? (
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: "var(--ink-3)", opacity: 0.5 }}>
-                      <LockIcon />
+                    <span className="flex-shrink-0 mt-0.5 opacity-50" style={{ color: "var(--ink-3)" }}>
+                      <Lock size={15} />
                     </span>
                   ) : (
                     <span className="flex-shrink-0 mt-0.5" style={{ color: "var(--accent)" }}>
-                      <LinkIcon />
+                      <ExternalLink size={15} />
                     </span>
                   )}
                 </div>
 
                 {/* Company & period */}
                 <p
-                  className="text-[10.5px] mb-2 font-medium"
+                  className="text-[11px] mb-3 font-semibold"
                   style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}
                 >
                   {p.company} · {p.period}
                 </p>
 
                 {/* Description */}
-                <p className="text-[12px] leading-snug mb-3 flex-1" style={{ color: "var(--ink-3)" }}>
+                <p className="text-[13px] leading-relaxed mb-4 flex-1 line-clamp-2" style={{ color: "var(--ink-2)" }}>
                   {p.description}
                 </p>
 
                 {/* Stack */}
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                  {p.stack.map((s) => (
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {p.stack.slice(0, 3).map((s) => (
                     <span key={s} className="tag">{s}</span>
                   ))}
+                  {p.stack.length > 3 && (
+                    <span className="tag opacity-70">+{p.stack.length - 3}</span>
+                  )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {projects.length > 2 && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-2 w-full py-2.5 rounded-xl text-[12px] font-medium transition-colors cursor-pointer"
+              className="mt-2 w-full py-3 rounded-xl text-[13px] font-semibold transition-all cursor-pointer"
               style={{
                 background: "var(--surface-2)",
                 border: "1px solid var(--border)",
@@ -126,11 +111,89 @@ export default function ProjectsSection() {
                 el.style.background = "var(--surface-2)";
               }}
             >
-              {isExpanded ? "Show Less" : "View more"}
+              {isExpanded ? "Show Less" : "View All Projects"}
             </button>
           )}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedId && selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+            style={{ background: "rgba(255, 255, 255, 0.6)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}
+            onClick={() => setSelectedId(null)}
+          >
+            <motion.div
+              layoutId={`project-${selectedId}`}
+              className="w-full max-w-2xl rounded-2xl flex flex-col border p-6 sm:p-8 relative overflow-y-auto max-h-[90vh]"
+              style={{
+                background: "var(--surface)",
+                borderColor: "var(--border)",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.2)"
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedId(null)}
+                className="absolute top-5 right-5 p-2 rounded-full hover:bg-white/10 transition-colors z-10"
+                style={{ color: "var(--ink-2)" }}
+              >
+                <X size={20} />
+              </button>
+
+              <div className="flex flex-col gap-1.5 mb-6 pr-8">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-2xl font-bold tracking-tight" style={{ color: "var(--ink)" }}>
+                    {selectedProject.title}
+                  </h3>
+                  {selectedProject.isPrivate ?
+                    <Lock size={18} className="opacity-50" style={{ color: "var(--ink-3)" }} /> :
+                    <ExternalLink size={18} style={{ color: "var(--accent)" }} />
+                  }
+                </div>
+                <p className="text-[13px] font-mono font-medium" style={{ color: "var(--accent)" }}>
+                  {selectedProject.company} · {selectedProject.period}
+                </p>
+              </div>
+
+              <div className="flex-1">
+                <h4 className="text-sm font-semibold mb-2 uppercase tracking-wider" style={{ color: "var(--ink-3)" }}>Overview</h4>
+                <p className="text-[15px] leading-relaxed mb-8" style={{ color: "var(--ink-2)" }}>
+                  {selectedProject.description}
+                </p>
+
+                <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: "var(--ink-3)" }}>Technologies Used</h4>
+                <div className="flex flex-wrap gap-2.5 mb-8">
+                  {selectedProject.stack.map((s) => (
+                    <span key={s} className="tag text-[12px] px-3 py-1.5">{s}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-auto pt-4 border-t flex items-center justify-between" style={{ borderColor: "var(--border)" }}>
+                {selectedProject.isPrivate ? (
+                  <p className="text-sm italic" style={{ color: "var(--ink-3)" }}>
+                    * This project is confidential and source code is locked.
+                  </p>
+                ) : selectedProject.link ? (
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    View Live Project <ExternalLink size={16} />
+                  </a>
+                ) : null}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

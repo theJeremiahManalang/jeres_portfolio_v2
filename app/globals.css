@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -32,7 +32,7 @@
   body {
     background-color: var(--bg);
     color: var(--ink);
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 }
@@ -41,7 +41,7 @@
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
-    @apply rounded-2xl transition-shadow duration-200;
+    @apply rounded-2xl transition-all duration-300;
   }
 
   .card:hover {
@@ -53,29 +53,29 @@
     border: 1px solid var(--border);
     color: var(--ink-2);
     font-family: 'JetBrains Mono', monospace;
-    @apply text-[10px] px-2 py-0.5 rounded-md transition-colors duration-150 cursor-default select-none;
+    @apply text-[10px] px-2.5 py-1 rounded-md transition-all duration-200 cursor-default select-none;
   }
 
   .tag:hover {
     border-color: var(--accent-mid);
-    color: var(--accent);
     background: var(--accent-light);
+    color: var(--accent);
   }
 
   .section-label {
     color: var(--ink-3);
     font-family: 'JetBrains Mono', monospace;
-    @apply text-[10px] font-semibold tracking-widest uppercase mb-3;
+    @apply text-[10.5px] font-bold tracking-widest uppercase mb-4;
   }
 
   .divider {
     border-color: var(--border);
-    @apply border-t my-4;
+    @apply border-t my-6;
   }
 
   .btn-primary {
     background: var(--accent);
-    @apply text-white text-[12.5px] font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-150 no-underline;
+    @apply text-white text-[13px] font-medium py-2.5 px-5 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 no-underline;
   }
 
   .btn-primary:hover {
@@ -85,9 +85,10 @@
   }
 
   .btn-secondary {
+    background: transparent;
     border: 1px solid var(--border-2);
     color: var(--ink-2);
-    @apply text-[12.5px] font-medium py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-150 no-underline bg-transparent;
+    @apply text-[13px] font-medium py-2.5 px-5 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 no-underline;
   }
 
   .btn-secondary:hover {

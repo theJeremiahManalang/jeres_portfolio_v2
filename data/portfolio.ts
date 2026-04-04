@@ -1,26 +1,26 @@
 export const profile = {
   name: "Jeremiah Manalang",
-  title: "Full-Stack Developer",
+  title: "Jr. Systems Developer",
   tagline: "Building clean systems that scale.",
   location: "Manila, Philippines",
   status: "Junior Systems Developer · Wilcon Depot, Inc.",
   phone: "09763201154",
   email: "engr.jeremiah.m@gmail.com",
   company: "Wilcon Depot, Inc.",
-  // resumeUrl: "/Renzi_Delposo_Resume.pdf",
+  resumeUrl: "/Renzi_Delposo_Resume.pdf",
   linkedin: "https://www.linkedin.com/in/theJeremiahManalang/",
   github: "https://github.com/theJeremiahManalang",
   instagram: "https://instagram.com/mayajere_",
   calendly: "https://calendly.com",
   about: [
-    "With 4+ years of full-stack experience, I've built enterprise systems serving 1,000+ users, automated workflows across 113 branches, and delivered web products from design to deployment.",
-    "Currently at MIMS Pte Ltd. as a Web Developer, contributing to regional digital delivery across Southeast Asia — while actively exploring AI-driven workflows and expanding front-end skills.",
-    "Passionate about minimalism, growth, and building meaningful digital experiences at the intersection of design and engineering.",
+    "Computer Engineer and Software Developer with 3+ years of hands-on experience building scalable web systems, applications, and system-driven solutions across academic, organizational, and enterprise environments.",
+    "Currently working as a Junior Systems Developer at Wilcon Depot, Inc., designing and developing business critical system solutions focused on process automation, operational efficiency, data accuracy, and seamless integration with existing.enterprise workflows.",
+    "Passionate about continuous growth across the software spectrum, with strong interest in expanding from full-stack and systems development into embedded systems, automations and Internet of Things (IoT) solutions that bridge software with real-world hardware applicationsy.",
   ],
   stats: [
-    { value: "20+", label: "Projects Delivered", sub: "Web systems, apps & e-commerce" },
-    { value: "4+", label: "Years Experience", sub: "Full-stack development & UI" },
-    { value: "1K+", label: "Users Served", sub: "Across 113+ branches" },
+    { value: "10+", label: "Projects Delivered", sub: "Web systems, apps & embedded systems" },
+    { value: "3+", label: "Years Experience", sub: "Full-stack development & embedded systems" },
+    { value: "500+", label: "Users Served", sub: "Across 100+ branches" },
   ],
 };
 
@@ -33,9 +33,9 @@ export const experience = [
     type: "Full-time · On-site",
     location: "Quezon City, Philippines",
     bullets: [
-      // "Developed and maintained internal web applications integrated with Infor M3 for 1,000+ users.",
-      // "Built full-stack features using Laravel, PHP, Vue.js, and MySQL, integrating Infor M3 based on business requirements.",
-      // "Managed deployments and Git workflows from testing to UAT and production.",
+      "Built and maintained internal Infor M3-integrated web applications serving 1,000+ users, including real-time QR count tag generation that improved productivity by 90% through automated PDF and Excel exports.",
+      "Developed the Inventory Count system with offline IndexedDB temporary storage and background cron-based data fetching, enabling reliable offline-first inventory capture, automatic sync processing, and multi-factor validation for approval-ready submissions.",
+      "Created automated report generation workflows with Comunion, streamlining report creation through field-driven processing and targeted error handling.",
     ],
     stack: ["Laravel", "PHP", "Vue.js", "MySQL", "Infor M3", "Cron", "Buefy", "Bulma CSS", "Bash", "Git"],
   },
@@ -176,18 +176,17 @@ export const projects = [
   //   isPrivate: false,
   //   link: "https://github.com/theJeremiahManalang/keynergy-ui"
   // },
-  // {
-  //   id: "unitycontainerfiller",
-  //   title: "Unity Container Filler",
-  //   company: "Schneider Electric",
-  //   period: "Jan 2025 - Mar 2025",
-  //   description: [
-  //     "Built a customer-facing payment request web application using jQuery that streamlined request processing through real-time Google Sheets data persistence, secure Google Drive multi-file uploads, and seamless integration with existing company systems."
-  //   ],
-  //   stack: ["Google App Script", "jQuery", "JavaScript", "Google Sheets", "Google Drive"],
-  //   isPrivate: false,
-  //   link: "https://github.com/theJeremiahManalang/keynergy-ui"
-  // },
+  {
+    id: "unitycontainerfiller",
+    title: "Automated Container Filler",
+    company: "Schneider Electric",
+    period: "Jun 2023 - Jul 2023",
+    description: [
+      "Developed the UI/UX frontend of an Automated Container Filler simulation system in C# using Unity, creating an intuitive and efficient interface for real-time process monitoring and user interaction."
+    ],
+    stack: ["Unity", "C#"],
+    isPrivate: true,
+  },
 
 ];
 

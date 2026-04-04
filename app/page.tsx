@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
 import AboutSection from "@/components/AboutSection";
@@ -30,8 +31,13 @@ export default function Home() {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
+        position: "relative",
       }}
     >
+      {/* Decorative Blobs */}
+      <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 blur-[120px] animate-blob pointer-events-none z-0" />
+      <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/10 blur-[120px] animate-blob animate-delay-200 pointer-events-none z-0" />
+
       {/* ── Mobile Nav — slides down when narrow ── */}
       <div
         style={{
@@ -48,6 +54,7 @@ export default function Home() {
 
       {/* ── Main content area ── */}
       <div
+        className="relative z-10"
         style={{
           flex: 1,
           display: "flex",
@@ -55,7 +62,10 @@ export default function Home() {
           transition: "padding 500ms cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           style={{
             width: "100%",
             margin: "0 auto",
@@ -115,16 +125,19 @@ export default function Home() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "clamp(20px, 3vw, 40px)",
+                paddingTop: "clamp(20px, 3vw, 40px)",
+                paddingLeft: "clamp(20px, 3vw, 40px)",
+                paddingRight: "clamp(20px, 3vw, 40px)",
+                paddingBottom: "0px",
                 gap: "clamp(24px, 3vw, 40px)",
               }}
             >
               <AboutSection />
-              <div style={{ borderTop: "1px solid var(--border)" }} />
+              {/* <div style={{ borderTop: "1px solid var(--border)" }} /> */}
               <ExperienceSection />
-              <div style={{ borderTop: "1px solid var(--border)" }} />
+              {/* <div style={{ borderTop: "1px solid var(--border)" }} /> */}
               <ProjectsSection />
-              <div style={{ borderTop: "1px solid var(--border)" }} />
+              {/* <div style={{ borderTop: "1px solid var(--border)" }} /> */}
               <EducationSection />
               <div style={{ height: "40px" }} />
             </div>
@@ -156,7 +169,7 @@ export default function Home() {
           >
             <RightSidebar />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
