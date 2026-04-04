@@ -19,7 +19,7 @@ export default function AboutSection() {
             color: "var(--ink)",
           }}
         >
-          The Last Developer{" "}
+          The Only Developer{" "}
           <em className="not-italic" style={{ color: "var(--accent)" }}>
             You&rsquo;ll Need
           </em>{" "}
