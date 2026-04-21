@@ -7,8 +7,8 @@ export const profile = {
   phone: "09763201154",
   email: "engr.jeremiah.m@gmail.com",
   company: "Wilcon Depot, Inc.",
-  resumeUrl: "/Renzi_Delposo_Resume.pdf",
-  linkedin: "https://www.linkedin.com/in/theJeremiahManalang/",
+  resumeUrl: "/data/pdf/jeremiah_manalang_cv.pdf",
+  linkedin: "https://www.linkedin.com/in/jeremiah-manalang/",
   github: "https://github.com/theJeremiahManalang",
   instagram: "https://instagram.com/mayajere_",
   calendly: "https://calendly.com",
@@ -92,7 +92,7 @@ export const projects = [
     ],
     stack: ["Arduino Uno", "C++"],
     isPrivate: false,
-    // link: "https://github.com/theJeremiahManalang/keynergy-ui"
+    link: "https://github.com/theJeremiahManalang/segbin"
   },
   {
     id: "communion",
@@ -142,7 +142,7 @@ export const projects = [
   },
   {
     id: "uniformdetection",
-    title: "Uniform Detection",
+    title: "Complete Uniform Detection using YOLOv3",
     company: "Adamson University",
     period: "Apr 2024 - May 2024",
     description: [
@@ -150,7 +150,7 @@ export const projects = [
     ],
     stack: ["Arduino Uno", "C++", "Python", "YOLOv3", "Google Colab"],
     isPrivate: false,
-    // link: "https://github.com/theJeremiahManalang/keynergy-ui"
+    link: "https://github.com/theJeremiahManalang/Complete-Uniform-Detection-using-YOLOv3"
   },
   // {
   //   id: "facultyconsultation",

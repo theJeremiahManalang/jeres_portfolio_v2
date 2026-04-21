@@ -1,5 +1,6 @@
 "use client";
 import { profile } from "@/data/portfolio";
+import Image from "next/image";
 
 const IconPhone = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -68,19 +69,27 @@ export default function LeftSidebar() {
       {/* Avatar */}
       <div className="relative mb-5">
         <div
-          className="w-full aspect-square rounded-2xl overflow-hidden"
+          className="relative w-full aspect-square rounded-2xl overflow-hidden"
           style={{
             border: "2px solid var(--border)",
             outline: "4px solid var(--surface-2)",
             outlineOffset: "-4px",
           }}
         >
-          <div
+          <Image
+            src="/data/images/Jeremiah-image.JPG"
+            alt="JM"
+            fill
+            quality={100}
+            className="object-cover object-top scale-105"
+          />
+          {/* <div
             className="w-full h-full flex items-center justify-center"
             style={{ background: "linear-gradient(135deg, var(--accent-light), var(--surface-2))" }}
           >
             {/* Avatar placeholder — replace with <img src="/renzi.png" ... /> */}
-            <span
+
+          {/* <span
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: "64px",
@@ -91,7 +100,7 @@ export default function LeftSidebar() {
             >
               JM
             </span>
-          </div>
+          </div> */}
         </div>
         {/* Status badge */}
         <div
@@ -133,9 +142,13 @@ export default function LeftSidebar() {
           <IconCalendar />
           Schedule a Meeting
         </a>
-        <a href={profile.resumeUrl} target="_blank" rel="noreferrer" className="btn-secondary">
+        <a
+          href={profile.resumeUrl}
+          download={`${profile.name}_resume.pdf`}
+          className="btn-secondary"
+        >
           <IconDownload />
-          Download Résumé
+          Download Resume
         </a>
       </div>
 
