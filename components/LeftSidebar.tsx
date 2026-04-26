@@ -88,7 +88,7 @@ export default function LeftSidebar() {
           }}
         >
           <Image
-            src="/images/jeremiah-image.jpg"
+            src="/images/jeremiah-manalang.png"
             alt="JM"
             width={512}
             height={512}
