@@ -156,7 +156,7 @@ export default function AwardsSection() {
                   }
                 </div>
                 <p className="text-[13px] font-mono font-medium" style={{ color: "var(--accent)" }}>
-                  {selectedAward.company} · {selectedAward.period}
+                  {selectedAward.fullcompany} · {selectedAward.period}
                 </p>
               </div>
 
