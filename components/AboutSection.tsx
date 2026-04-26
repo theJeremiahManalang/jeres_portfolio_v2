@@ -84,28 +84,10 @@ export default function AboutSection() {
             with{" "}
             <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
               3+ years
-            </strong>{" "}
+            </strong>{" "}  
             of hands-on experience building scalable web systems, applications, and
             system-driven solutions across academic, organizational, and enterprise
-            environments.
-          </p>
-
-          <p className="text-[14px] leading-loose" style={{ color: "var(--accent-2)" }}>
-            Currently working as a{" "}
-            <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
-              Junior Systems Developer
-            </strong>{" "}
-            at{" "}
-            <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
-              Wilcon Depot, Inc.
-            </strong>
-            , designing and developing business-critical system solutions focused on
-            process automation, operational efficiency, data accuracy, and seamless
-            integration with existing enterprise workflows.
-          </p>
-
-          <p className="text-[14px] leading-loose" style={{ color: "var(--accent-2)" }}>
-            Passionate about continuous growth across the software spectrum, with strong
+            environments. Passionate about continuous growth across the software spectrum, with strong
             interest in expanding into{" "}
             <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
               embedded systems
@@ -120,6 +102,24 @@ export default function AboutSection() {
             </strong>{" "}
             solutions that bridge software with real-world hardware applications.
           </p>
+
+
+          {/* <p className="text-[14px] leading-loose" style={{ color: "var(--accent-2)" }}>
+            Currently working as a{" "}
+            <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
+              Junior Systems Developer
+            </strong>{" "}
+            at{" "}
+            <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
+              Wilcon Depot, Inc.
+            </strong>
+            , designing and developing business-critical system solutions focused on
+            process automation, operational efficiency, data accuracy, and seamless
+            integration with existing enterprise workflows.
+          </p> */}
+
+
+            
         </div>
       </div>
     </section>

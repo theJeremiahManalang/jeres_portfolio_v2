@@ -138,7 +138,7 @@ export default function LeftSidebar() {
           <IconMail />
           Get in Touch
         </a>
-        <a href={profile.calendly} target="_blank" rel="noreferrer" className="btn-secondary">
+        {/* <a href={profile.calendly} target="_blank" rel="noreferrer" className="btn-secondary">
           <IconCalendar />
           Schedule a Meeting
         </a>
@@ -149,7 +149,7 @@ export default function LeftSidebar() {
         >
           <IconDownload />
           Download Resume
-        </a>
+        </a> */}
       </div>
 
       <div className="divider" />

@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
+import AwardsSection from "@/components/AwardsSection";
 import MobileNav from "@/components/MobileNav";
 
 export default function Home() {
@@ -139,6 +140,7 @@ export default function Home() {
               <ProjectsSection />
               {/* <div style={{ borderTop: "1px solid var(--border)" }} /> */}
               <EducationSection />
+              <AwardsSection />
               <div style={{ height: "40px" }} />
             </div>
           </main>

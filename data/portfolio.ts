@@ -190,6 +190,36 @@ export const projects = [
 
 ];
 
+export const awards = [
+  {
+    id: "salesmobility",
+    title: "Sales Mobility",
+    company: "Wilcon Depot, Inc.",
+    period: "Jan 2026 – Present",
+    description: [
+      "Developed the count tag (QR) generation system that lets the user generate any amount of count tags for the items in the store in real-time which helps 95% in the productivity of the user.",
+      "",
+    ],
+    stack: ["Laravel", "Vue.js", "MySQL", "Infor M3"],
+    isPrivate: true,
+    link: "https://github.com/httprenz",
+  },
+  {
+    id: "segbin",
+    title: "Segbin",
+    company: "Linkd Solutions",
+    period: "Feb 2026",
+    description: [
+      "Designed and built an automated waste segregation system for wet, dry, and plastic bottle waste using Arduino Uno, IR sensors, and a water sensor module, including the full physical prototype structure and sorting mechanism."
+    ],
+    stack: ["Arduino Uno", "C++"],
+    isPrivate: false,
+    link: "https://github.com/theJeremiahManalang/keynergy-ui"
+  },
+  
+
+];
+
 export const education = [
   {
     id: "adu",
