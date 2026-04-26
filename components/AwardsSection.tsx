@@ -5,11 +5,11 @@ import { awards, projects } from "@/data/portfolio";
 import { Lock, ExternalLink, X } from "lucide-react";
 
 export default function AwardsSection() {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [isAwardsExpanded, setIsAwardsExpanded] = useState(false);
+  const [selectedAwardId, setSelectedAwardId] = useState<string | null>(null);
 
-  const visibleAwards = isExpanded ? awards : awards.slice(0, 2);
-  const selectedAward = awards.find(a => a.id === selectedId);
+  const visibleAwards = isAwardsExpanded ? awards : awards.slice(0, 3);
+  const selectedAward = awards.find(a => a.id === selectedAwardId);
 
   return (
     <section>
@@ -23,12 +23,12 @@ export default function AwardsSection() {
           </h2>
         </div>
         <div className="p-6 flex flex-col gap-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
             {visibleAwards.map((p) => (
               <motion.div
                 layoutId={`project-${p.id}`}
                 key={p.id}
-                onClick={() => setSelectedId(p.id)}
+                onClick={() => setSelectedAwardId(p.id)}
                 className="p-5 rounded-xl transition-all duration-200 cursor-pointer flex flex-col group"
                 style={{
                   border: "1px solid var(--border)",
@@ -67,33 +67,33 @@ export default function AwardsSection() {
 
                 {/* Company & period */}
                 <p
-                  className="text-[11px] mb-3 font-semibold"
+                  className="text-[11px] font-semibold"
                   style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}
                 >
                   {p.company} · {p.period}
                 </p>
 
                 {/* Description */}
-                <p className="text-[13px] leading-relaxed mb-4 flex-1 line-clamp-2" style={{ color: "var(--ink-2)" }}>
+                {/* <p className="text-[13px] leading-relaxed mb-4 flex-1 line-clamp-2" style={{ color: "var(--ink-2)" }}>
                   {p.description}
-                </p>
+                </p> */}
 
                 {/* Stack */}
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {p.stack.slice(0, 3).map((s) => (
+                {/* <div className="flex flex-wrap gap-2 mt-auto">
+                  {p.stack?.slice(0, 3).map((s) => (
                     <span key={s} className="tag">{s}</span>
                   ))}
-                  {p.stack.length > 3 && (
+                  {p.stack?.length > 3 && (
                     <span className="tag opacity-70">+{p.stack.length - 3}</span>
                   )}
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>
 
-          {projects.length > 2 && (
+          {awards.length > 2 && (
             <button
-              onClick={() => setIsExpanded(!isExpanded)}
+              onClick={() => setIsAwardsExpanded(!isAwardsExpanded)}
               className="mt-2 w-full py-3 rounded-xl text-[13px] font-semibold transition-all cursor-pointer"
               style={{
                 background: "var(--surface-2)",
@@ -111,24 +111,24 @@ export default function AwardsSection() {
                 el.style.background = "var(--surface-2)";
               }}
             >
-              {isExpanded ? "Show Less" : "View All Projects"}
+              {isAwardsExpanded ? "Show Less" : "View All Awards & Competitions"}
             </button>
           )}
         </div>
       </div>
 
       <AnimatePresence>
-        {selectedId && selectedAward && (
+        {selectedAwardId && selectedAward && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
             style={{ background: "rgba(255, 255, 255, 0.6)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}
-            onClick={() => setSelectedId(null)}
+            onClick={() => setSelectedAwardId(null)}
           >
             <motion.div
-              layoutId={`project-${selectedId}`}
+              layoutId={`project-${selectedAwardId}`}
               className="w-full max-w-2xl rounded-2xl flex flex-col border p-6 sm:p-8 relative overflow-y-auto max-h-[90vh]"
               style={{
                 background: "var(--surface)",
@@ -138,7 +138,7 @@ export default function AwardsSection() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                onClick={() => setSelectedId(null)}
+                onClick={() => setSelectedAwardId(null)}
                 className="absolute top-5 right-5 p-2 rounded-full hover:bg-white/10 transition-colors z-10"
                 style={{ color: "var(--ink-2)" }}
               >
@@ -166,15 +166,15 @@ export default function AwardsSection() {
                   {selectedAward.description}
                 </p>
 
-                <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: "var(--ink-3)" }}>Technologies Used</h4>
+                {/* <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: "var(--ink-3)" }}>Technologies Used</h4>
                 <div className="flex flex-wrap gap-2.5 mb-8">
                   {selectedAward.stack.map((s) => (
                     <span key={s} className="tag text-[12px] px-3 py-1.5">{s}</span>
                   ))}
-                </div>
+                </div> */}
               </div>
 
-              <div className="mt-auto pt-4 border-t flex items-center justify-between" style={{ borderColor: "var(--border)" }}>
+              {/* <div className="mt-auto pt-4 border-t flex items-center justify-between" style={{ borderColor: "var(--border)" }}>
                 {selectedAward.isPrivate ? (
                   <p className="text-sm italic" style={{ color: "var(--ink-3)" }}>
                     * This project is confidential and source code is locked.
@@ -189,7 +189,7 @@ export default function AwardsSection() {
                     View Live Project <ExternalLink size={16} />
                   </a>
                 ) : null}
-              </div>
+              </div> */}
             </motion.div>
           </motion.div>
         )}

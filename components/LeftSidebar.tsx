@@ -60,6 +60,17 @@ const IconInstagram = () => (
   </svg>
 );
 
+const handleDownload = async () => {
+  const res = await fetch("/data/pdf/jeremiah_manalang_cv.pdf");
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "jeremiah_manalang_cv.pdf";
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
 export default function LeftSidebar() {
   return (
     <aside
@@ -77,11 +88,13 @@ export default function LeftSidebar() {
           }}
         >
           <Image
-            src="/data/images/Jeremiah-image.JPG"
+            src="/data/images/jeremiah-image.jpg"
             alt="JM"
-            fill
+            width={512}
+            height={512}
             quality={100}
-            className="object-cover object-top scale-105"
+            priority={true}
+            className="object-cover object-top scale-110"
           />
           {/* <div
             className="w-full h-full flex items-center justify-center"
@@ -141,15 +154,14 @@ export default function LeftSidebar() {
         {/* <a href={profile.calendly} target="_blank" rel="noreferrer" className="btn-secondary">
           <IconCalendar />
           Schedule a Meeting
-        </a>
-        <a
-          href={profile.resumeUrl}
-          download={`${profile.name}_resume.pdf`}
+        </a> */}
+        <button
+          onClick={handleDownload}
           className="btn-secondary"
         >
           <IconDownload />
           Download Resume
-        </a> */}
+        </button>
       </div>
 
       <div className="divider" />

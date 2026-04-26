@@ -1,73 +1,3 @@
-export const profile = {
-  name: "Jeremiah Manalang",
-  title: "Jr. Systems Developer",
-  tagline: "Building clean systems that scale.",
-  location: "Manila, Philippines",
-  status: "Junior Systems Developer · Wilcon Depot, Inc.",
-  phone: "09763201154",
-  email: "engr.jeremiah.m@gmail.com",
-  company: "Wilcon Depot, Inc.",
-  resumeUrl: "/data/pdf/jeremiah_manalang_cv.pdf",
-  linkedin: "https://www.linkedin.com/in/jeremiah-manalang/",
-  github: "https://github.com/theJeremiahManalang",
-  instagram: "https://instagram.com/mayajere_",
-  calendly: "https://calendly.com",
-  about: [
-    "Computer Engineer and Software Developer with 3+ years of hands-on experience building scalable web systems, applications, and system-driven solutions across academic, organizational, and enterprise environments.",
-    "Currently working as a Junior Systems Developer at Wilcon Depot, Inc., designing and developing business critical system solutions focused on process automation, operational efficiency, data accuracy, and seamless integration with existing.enterprise workflows.",
-    "Passionate about continuous growth across the software spectrum, with strong interest in expanding from full-stack and systems development into embedded systems, automations and Internet of Things (IoT) solutions that bridge software with real-world hardware applicationsy.",
-  ],
-  stats: [
-    { value: "10+", label: "Projects Delivered", sub: "Web systems, apps & embedded systems" },
-    { value: "3+", label: "Years Experience", sub: "Full-stack development & embedded systems" },
-    { value: "500+", label: "Users Served", sub: "Across 100+ branches" },
-  ],
-};
-
-export const experience = [
-  {
-    id: "wilcon",
-    period: "Dec 2025 – Present",
-    role: "Junior Systems Developer",
-    company: "Wilcon Depot, Inc.",
-    type: "Full-time · On-site",
-    location: "Quezon City, Philippines",
-    bullets: [
-      "Built and maintained internal Infor M3-integrated web applications serving 1,000+ users, including real-time QR count tag generation that improved productivity by 90% through automated PDF and Excel exports.",
-      "Developed the Inventory Count system with offline IndexedDB temporary storage and background cron-based data fetching, enabling reliable offline-first inventory capture, automatic sync processing, and multi-factor validation for approval-ready submissions.",
-      "Created automated report generation workflows with Comunion, streamlining report creation through field-driven processing and targeted error handling.",
-    ],
-    stack: ["Laravel", "PHP", "Vue.js", "MySQL", "Infor M3", "Cron", "Buefy", "Bulma CSS", "Bash", "Git"],
-  },
-  {
-    id: "aboitiz-foods",
-    period: "Jan 2025 – Mar 2025",
-    role: "Software Developer Intern",
-    company: "Aboitiz Foods Group",
-    type: "Internship · Hybrid",
-    location: "Taguig, Philippines",
-    bullets: [
-      "Developed a customer-facing web application utilizing the jQuery framework to streamline payment request processing and improve overall user efficiency.",
-      "Established a data pipeline with Google Sheets for real-time data persistence and connected the app with automated Google Drive integration for secure multi-file uploads.",
-      "Collaborated with the IT department to integrate the application with the company's existing systems, ensuring seamless data flow and operational compatibility.",
-    ],
-    stack: ["HTML5", "CSS3", "jQuery", "JavaScript", "Google Sheets", "Google Drive"],
-  },
-  {
-    id: "schneider-electric",
-    period: "Jun 2023 – Jul 2023",
-    role: "Digital Transformation Intern",
-    company: "Schneider Electric Philippines",
-    type: "Internship · On-site",
-    location: "Cavite, Philippines",
-    bullets: [
-      "Developed the User Interface (UI) for a 3D truck container filler using Unity and C#, enabling operators to visualize and optimize container box positioning.",
-      "Contributed to the development and integration of core system functionalities, directly enhancing the overall logistics efficiency and operational flow.",
-    ],
-    stack: ["Unity", "C#", "HTML5", "CSS3", "Vue.js", "MySQL", "Tailwind CSS"],
-  },
-];
-
 export const projects = [
   {
     id: "salesmobility",
@@ -80,7 +10,18 @@ export const projects = [
     ],
     stack: ["Laravel", "Vue.js", "MySQL", "Infor M3"],
     isPrivate: true,
-    // link: "https://github.com/httprenz",
+  },
+  {
+    id: "bright-walk",
+    title: "Bright Walk",
+    company: "Linkd Solutions",
+    period: "Apr 2026",
+    description: [
+      "Designed and built an assistive navigation device for PWD using wheelchairs, canes, walkers, or rollators. It detects obstacles in front of the user, includes a flashlight for visibility, and features a pull-activated emergency buzzer for quick alerts, with a complete working prototype",
+    ],
+    stack: ["Arduino Micro", "C++"],
+    isPrivate: false,
+    link: "https://github.com/theJeremiahManalang/bright-walk-device"
   },
   {
     id: "segbin",
@@ -187,36 +128,165 @@ export const projects = [
     stack: ["Unity", "C#"],
     isPrivate: true,
   },
-
 ];
+
+const startYear = 2022;
+const currentYear = new Date().getFullYear();
+const years = currentYear - startYear;
+
+
+
+export const profile = {
+  name: "Jeremiah Manalang",
+  title: "Jr. Systems Developer",
+  tagline: "Building clean systems that scale.",
+  location: "Manila, Philippines",
+  status: "Junior Systems Developer · Wilcon Depot, Inc.",
+  phone: "09763201154",
+  email: "engr.jeremiah.m@gmail.com",
+  company: "Wilcon Depot, Inc.",
+  resumeUrl: "",
+  linkedin: "https://www.linkedin.com/in/jeremiah-manalang/",
+  github: "https://github.com/theJeremiahManalang",
+  instagram: "https://instagram.com/mayajere_",
+  calendly: "https://calendly.com",
+  about: [
+    "Computer Engineer and Software Developer with 3+ years of hands-on experience building scalable web systems, applications, and system-driven solutions across academic, organizational, and enterprise environments.",
+    "Currently working as a Junior Systems Developer at Wilcon Depot, Inc., designing and developing business critical system solutions focused on process automation, operational efficiency, data accuracy, and seamless integration with existing.enterprise workflows.",
+    "Passionate about continuous growth across the software spectrum, with strong interest in expanding from full-stack and systems development into embedded systems, automations and Internet of Things (IoT) solutions that bridge software with real-world hardware applicationsy.",
+  ],
+  stats: [
+    { value: projects.length.toString(), label: "Projects Delivered", sub: "Software & Hardware Projects" },
+    { value: `${years}+`, label: "Years Experience", sub: "Full-stack development & embedded systems" },
+    { value: "500+", label: "Users Served", sub: "Across 100+ branches" },
+  ],
+};
+
+export const experience = [
+  {
+    id: "wilcon",
+    period: "Dec 2025 – Present",
+    role: "Junior Systems Developer",
+    company: "Wilcon Depot, Inc.",
+    type: "Full-time · On-site",
+    location: "Quezon City, Philippines",
+    bullets: [
+      "Built and maintained internal Infor M3-integrated web applications serving 1,000+ users, including real-time QR count tag generation that improved productivity by 90% through automated PDF and Excel exports.",
+      "Developed the Inventory Count system with offline IndexedDB temporary storage and background cron-based data fetching, enabling reliable offline-first inventory capture, automatic sync processing, and multi-factor validation for approval-ready submissions.",
+      "Created automated report generation workflows with Comunion, streamlining report creation through field-driven processing and targeted error handling.",
+    ],
+    stack: ["Laravel", "PHP", "Vue.js", "MySQL", "Infor M3", "Cron", "Buefy", "Bulma CSS", "Bash", "Git"],
+  },
+  {
+    id: "aboitiz-foods",
+    period: "Jan 2025 – Mar 2025",
+    role: "Software Developer Intern",
+    company: "Aboitiz Foods Group",
+    type: "Internship · Hybrid",
+    location: "Taguig, Philippines",
+    bullets: [
+      "Developed a customer-facing web application utilizing the jQuery framework to streamline payment request processing and improve overall user efficiency.",
+      "Established a data pipeline with Google Sheets for real-time data persistence and connected the app with automated Google Drive integration for secure multi-file uploads.",
+      "Collaborated with the IT department to integrate the application with the company's existing systems, ensuring seamless data flow and operational compatibility.",
+    ],
+    stack: ["HTML5", "CSS3", "jQuery", "JavaScript", "Google Sheets", "Google Drive"],
+  },
+  {
+    id: "schneider-electric",
+    period: "Jun 2023 – Jul 2023",
+    role: "Digital Transformation Intern",
+    company: "Schneider Electric Philippines",
+    type: "Internship · On-site",
+    location: "Cavite, Philippines",
+    bullets: [
+      "Developed the User Interface (UI) for a 3D truck container filler using Unity and C#, enabling operators to visualize and optimize container box positioning.",
+      "Contributed to the development and integration of core system functionalities, directly enhancing the overall logistics efficiency and operational flow.",
+    ],
+    stack: ["Unity", "C#", "HTML5", "CSS3", "Vue.js", "MySQL", "Tailwind CSS"],
+  },
+];
+
+
 
 export const awards = [
   {
-    id: "salesmobility",
-    title: "Sales Mobility",
-    company: "Wilcon Depot, Inc.",
-    period: "Jan 2026 – Present",
+    id: "hackathon",
+    title: "1st Naga City Mayoral Hackathon - Participant",
+    company: "MyNaga App",
+    fullcompany: "MyNaga App",
+    period: "Dec 2025 – Jan 2026",
     description: [
-      "Developed the count tag (QR) generation system that lets the user generate any amount of count tags for the items in the store in real-time which helps 95% in the productivity of the user.",
-      "",
+      "Collaborated with a team to design, present, and developed a comprehensive presentation about MyNaga Gabay, an application that helps Bikolanos with their healthcare needs such as a prescription photo explainer, symptom triage, medicine information hub, healthcare navigator, Philhealth guide, and a multilingual AI that they can communicate with.",
     ],
-    stack: ["Laravel", "Vue.js", "MySQL", "Infor M3"],
     isPrivate: true,
-    link: "https://github.com/httprenz",
   },
   {
-    id: "segbin",
-    title: "Segbin",
-    company: "Linkd Solutions",
-    period: "Feb 2026",
+    id: "sla-osa",
+    title: "St. Vincent de Paul Student Leadership Award",
+    company: "AdU - OSA",
+    fullcompany: "Adamson University - Office of Student Affairs",
+    period: "Apr 2025",
     description: [
-      "Designed and built an automated waste segregation system for wet, dry, and plastic bottle waste using Arduino Uno, IR sensors, and a water sensor module, including the full physical prototype structure and sorting mechanism."
+      "Awarded the Rank 9 St. Vincent de Paul Leadership Award for Batch 2024–2025, recognizing sustained excellence in student leadership and organizational impact."
     ],
-    stack: ["Arduino Uno", "C++"],
-    isPrivate: false,
-    link: "https://github.com/theJeremiahManalang/keynergy-ui"
+    isPrivate: true,
   },
-  
+  {
+    id: "sla",
+    title: "Student Leadership Award",
+    company: "AdU - CpE",
+    fullcompany: "Adamson University - CpE Department",
+    period: "Apr 2025",
+    description: [
+      "Recognized for outstanding leadership and community service throughout the academic year."
+    ],
+    isPrivate: true,
+  },
+  {
+    id: "icpep-breadboard-2023",
+    title: "ICPEP-NCR Breadboarding Competition 2023 - 3rd Runner-Up",
+    company: "ICpEP-NCR",
+    fullcompany: "Institute of Computer Engineers of the Philippines - NCR",
+    period: "Dec 2023",
+    description: [
+      "Competed in the ICPEP-NCR Breadboarding Competition 2023, showcasing technical skills in breadboard design and implementation."
+    ],
+    isPrivate: true,
+  },
+  {
+    id: "cpe-breadboard-2023",
+    title: "CpEntellihente v5.0 Breadboarding Competition - Champion",
+    company: "ACOES",
+    fullcompany: "Adamson Computer Engineering Society (ACOES)",
+    period: "Nov 2023",
+    description: [
+      "Co-founded a winning breadboarding team in CpEntellihente v5.0 Breadboarding Competition, showcasing technical skills in breadboard design and implementation."
+    ],
+    isPrivate: true,
+  },
+  {
+    id: "icpep-breadboard-2022",
+    title: "ICPEP-NCR Breadboarding Competition 2022 - Participant",
+    company: "ICpEP-NCR",
+    fullcompany: "Institute of Computer Engineers of the Philippines - NCR",
+    period: "Dec 2022",
+    description: [
+      "Competed in the ICPEP-NCR Breadboarding Competition 2022, showcasing technical skills in breadboard design and implementation."
+    ],
+    isPrivate: true,
+  },
+  {
+    id: "altruhack",
+    title: "AltruHack: A Social Impact Hackaton - Finalist",
+    company: "AdU NEST",
+    fullcompany: "Adamson University NEST",
+    period: "Jul 2021",
+    description: [
+      "Joined as a team to develop a prototype solution addressing social issues, reaching the finals in the AltruHack Social Impact Hackathon organized by AdU NEST."
+    ],
+    isPrivate: true,
+  },
+
 
 ];
 

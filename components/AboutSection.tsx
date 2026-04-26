@@ -9,7 +9,7 @@ export default function AboutSection() {
           className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 opacity-80"
           style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}
         >
-          Full-Stack Developer · Computer Engineer · System Developer
+          Full-Stack Developer · Computer Engineer · Freelance Developer
         </p>
         <h1
           className="font-bold tracking-tight leading-[1.1] mb-5"
@@ -84,7 +84,7 @@ export default function AboutSection() {
             with{" "}
             <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
               3+ years
-            </strong>{" "}  
+            </strong>{" "}
             of hands-on experience building scalable web systems, applications, and
             system-driven solutions across academic, organizational, and enterprise
             environments. Passionate about continuous growth across the software spectrum, with strong
@@ -119,7 +119,7 @@ export default function AboutSection() {
           </p> */}
 
 
-            
+
         </div>
       </div>
     </section>

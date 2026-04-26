@@ -150,13 +150,13 @@ export default function RightSidebar() {
           <p className="text-[11px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
             Impactful projects &amp; freelance work — let&rsquo;s build something together.
           </p>
-          <a
+          {/* <a
             href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-1 text-[11px] font-semibold mt-2 no-underline"
             style={{ color: "var(--accent)" }}
           >
             Contact us thru Linkd Solutions →
-          </a>
+          </a> */}
         </div>
 
         {/* Footer */}
