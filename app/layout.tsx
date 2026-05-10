@@ -5,6 +5,9 @@ import { Analytics } from "@vercel/analytics/react";
 export const metadata: Metadata = {
   title: "Jeremiah Manalang",
   description: "Full-Stack Developer based in the Philippines. Building clean systems that scale.",
+  icons: {
+    icon: "/code.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

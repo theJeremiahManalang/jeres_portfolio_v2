@@ -61,12 +61,12 @@ const IconInstagram = () => (
 );
 
 const handleDownload = async () => {
-  const res = await fetch("/data/pdf/jeremiah_manalang_cv.pdf");
+  const res = await fetch("/data/pdf/jeremiah_manalang_cv_v2.pdf");
   const blob = await res.blob();
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "jeremiah_manalang_cv.pdf";
+  a.download = "jeremiah_manalang_cv_v2.pdf";
   a.click();
   URL.revokeObjectURL(url);
 };

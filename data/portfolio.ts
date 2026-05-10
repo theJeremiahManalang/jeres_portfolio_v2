@@ -156,7 +156,7 @@ export const profile = {
     "Passionate about continuous growth across the software spectrum, with strong interest in expanding from full-stack and systems development into embedded systems, automations and Internet of Things (IoT) solutions that bridge software with real-world hardware applicationsy.",
   ],
   stats: [
-    { value: projects.length.toString(), label: "Projects Delivered", sub: "Software & Hardware Projects" },
+    { value: `${projects.length}+`, label: "Projects Delivered", sub: "Software & Hardware Projects" },
     { value: `${years}+`, label: "Years Experience", sub: "Full-stack development & embedded systems" },
     { value: "500+", label: "Users Served", sub: "Across 100+ branches" },
   ],
