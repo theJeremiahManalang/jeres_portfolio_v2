@@ -9,7 +9,7 @@ export default function AboutSection() {
           className="text-[11px] font-bold tracking-[0.2em] uppercase mb-4 opacity-80"
           style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}
         >
-          Full-Stack Developer · Computer Engineer · Freelance Developer
+          Full-Stack Developer · Computer Engineer · Freelancer
         </p>
         <h1
           className="font-bold tracking-tight leading-[1.1] mb-5"
@@ -19,20 +19,19 @@ export default function AboutSection() {
             color: "var(--ink)",
           }}
         >
-          The Only Engineer{" "}
+          I build things.{" "}
           <em className="not-italic" style={{ color: "var(--accent)" }}>
-            You&rsquo;ll Need
+            I break things.
           </em>{" "}
-          to Develop.
+          I fix things.
         </h1>
         <p className="text-[15px] leading-relaxed max-w-[600px]" style={{ color: "var(--ink-2)" }}>
-          I&apos;m not just a Developer. I&apos;m a Computer Engineer
-          who builds the System behind the Code.
+        Just a simple guy who loves to build things and learn new things.
         </p>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-3 gap-4 mb-0">
         {profile.stats.map((s) => (
           <div
             key={s.label}
@@ -67,7 +66,7 @@ export default function AboutSection() {
       </div>
 
       {/* About card */}
-      <div className="rounded-2xl relative overflow-hidden" style={{ border: "1px solid var(--border)", background: "var(--surface)" }}>
+      {/* <div className="rounded-2xl relative overflow-hidden" style={{ border: "1px solid var(--border)", background: "var(--surface)" }}>
         <div className="px-6 py-4" style={{ borderBottom: "1px solid var(--border)" }}>
           <h2
             className="font-semibold tracking-tight"
@@ -104,7 +103,7 @@ export default function AboutSection() {
           </p>
 
 
-          {/* <p className="text-[14px] leading-loose" style={{ color: "var(--accent-2)" }}>
+          <p className="text-[14px] leading-loose" style={{ color: "var(--accent-2)" }}>
             Currently working as a{" "}
             <strong style={{ color: "var(--accent)", fontWeight: 700 }}>
               Junior Systems Developer
@@ -116,12 +115,12 @@ export default function AboutSection() {
             , designing and developing business-critical system solutions focused on
             process automation, operational efficiency, data accuracy, and seamless
             integration with existing enterprise workflows.
-          </p> */}
+          </p>
 
 
 
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

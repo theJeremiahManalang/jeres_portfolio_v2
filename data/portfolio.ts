@@ -5,8 +5,9 @@ export const projects = [
     company: "Wilcon Depot, Inc.",
     period: "Jan 2026 – Present",
     description: [
-      "Developed the count tag (QR) generation system that lets the user generate any amount of count tags for the items in the store in real-time which helps 95% in the productivity of the user.",
-      "",
+      "Developed an automated count tag generation system capable of instantly producing bulk counttags, automatically storing data in the database, and exporting reports in PDF or Excel formats.",
+      "Implemented an offline-capable data storage solution using IndexedDB, enabling seamless localdata handling and database synchronization during network interruptions.",
+      "Integrated a location-based data filtering system that automatically displays branch-specific data tousers based on registered IP addresses stored in the database across 110+ branches.",
     ],
     stack: ["Laravel", "Vue.js", "MySQL", "Infor M3"],
     isPrivate: true,
@@ -41,7 +42,7 @@ export const projects = [
     company: "Wilcon Depot, Inc.",
     period: "Jan 2026",
     description: [
-      "Developed the count tag (QR) generation system that lets the user generate any amount of count tags for the items in the store in real-time which helps 95% in the productivity of the user.",
+      "Implemented an automated report generation system that automatically fetches data from the database and generates reports in PDF or Excel formats based on the user's selected parameters.",
     ],
     stack: ["Laravel", "Vue.js", "MySQL", "ComUnion"],
     isPrivate: true,
@@ -157,8 +158,8 @@ export const profile = {
   ],
   stats: [
     { value: `${projects.length}+`, label: "Projects Delivered", sub: "Software & Hardware Projects" },
-    { value: `${years}+`, label: "Years Experience", sub: "Full-stack development & embedded systems" },
-    { value: "500+", label: "Users Served", sub: "Across 100+ branches" },
+    { value: `${years}+`, label: "Years Experience", sub: "Full-Stack & Embedded" },
+    { value: "500+", label: "Users Served", sub: "Enterprise & Organization Scale" },
   ],
 };
 
@@ -218,6 +219,7 @@ export const awards = [
     description: [
       "Collaborated with a team to design, present, and developed a comprehensive presentation about MyNaga Gabay, an application that helps Bikolanos with their healthcare needs such as a prescription photo explainer, symptom triage, medicine information hub, healthcare navigator, Philhealth guide, and a multilingual AI that they can communicate with.",
     ],
+    image: "/images/awards/mynaga-hackathon.png",
     isPrivate: true,
   },
   {
@@ -226,6 +228,7 @@ export const awards = [
     company: "AdU - OSA",
     fullcompany: "Adamson University - Office of Student Affairs",
     period: "Apr 2025",
+    image: "/images/awards/stvincentdepaulaward.jpg",
     description: [
       "Awarded the Rank 9 St. Vincent de Paul Leadership Award for Batch 2024–2025, recognizing sustained excellence in student leadership and organizational impact."
     ],
@@ -237,6 +240,7 @@ export const awards = [
     company: "AdU - CpE",
     fullcompany: "Adamson University - CpE Department",
     period: "Apr 2025",
+    image: "/images/awards/cpedeptaward.jpg",
     description: [
       "Recognized for outstanding leadership and community service throughout the academic year."
     ],
@@ -248,6 +252,7 @@ export const awards = [
     company: "ICpEP-NCR",
     fullcompany: "Institute of Computer Engineers of the Philippines - NCR",
     period: "Dec 2023",
+    image: "/images/awards/icpepbreadboard2023.jpg",
     description: [
       "Competed in the ICPEP-NCR Breadboarding Competition 2023, showcasing technical skills in breadboard design and implementation."
     ],
@@ -259,6 +264,7 @@ export const awards = [
     company: "ACOES",
     fullcompany: "Adamson Computer Engineering Society (ACOES)",
     period: "Nov 2023",
+    image: "/images/awards/cpebreadboard2023.jpg",
     description: [
       "Co-founded a winning breadboarding team in CpEntellihente v5.0 Breadboarding Competition, showcasing technical skills in breadboard design and implementation."
     ],
@@ -270,6 +276,7 @@ export const awards = [
     company: "ICpEP-NCR",
     fullcompany: "Institute of Computer Engineers of the Philippines - NCR",
     period: "Dec 2022",
+    image: "/images/awards/icpepbreadboard2022.jpg",
     description: [
       "Competed in the ICPEP-NCR Breadboarding Competition 2022, showcasing technical skills in breadboard design and implementation."
     ],
@@ -281,6 +288,7 @@ export const awards = [
     company: "AdU NEST",
     fullcompany: "Adamson University NEST",
     period: "Jul 2021",
+    image: "/images/awards/altruhack.jpg",
     description: [
       "Joined as a team to develop a prototype solution addressing social issues, reaching the finals in the AltruHack Social Impact Hackathon organized by AdU NEST."
     ],

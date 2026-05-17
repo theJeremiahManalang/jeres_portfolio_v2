@@ -15,7 +15,7 @@ export default function ExperienceSection() {
             className="font-bold tracking-tight mb-0"
             style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px", color: "var(--ink)" }}
           >
-            Experience
+            Work Experience
           </h2>
         </div>
         <div className="p-6 flex flex-col gap-3">

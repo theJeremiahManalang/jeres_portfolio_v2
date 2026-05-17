@@ -165,31 +165,17 @@ export default function AwardsSection() {
                 <p className="text-[15px] leading-relaxed mb-8" style={{ color: "var(--ink-2)" }}>
                   {selectedAward.description}
                 </p>
-
-                {/* <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: "var(--ink-3)" }}>Technologies Used</h4>
-                <div className="flex flex-wrap gap-2.5 mb-8">
-                  {selectedAward.stack.map((s) => (
-                    <span key={s} className="tag text-[12px] px-3 py-1.5">{s}</span>
-                  ))}
-                </div> */}
               </div>
 
-              {/* <div className="mt-auto pt-4 border-t flex items-center justify-between" style={{ borderColor: "var(--border)" }}>
-                {selectedAward.isPrivate ? (
-                  <p className="text-sm italic" style={{ color: "var(--ink-3)" }}>
-                    * This project is confidential and source code is locked.
-                  </p>
-                ) : selectedAward.link ? (
-                  <a
-                    href={selectedAward.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary"
-                  >
-                    View Live Project <ExternalLink size={16} />
-                  </a>
-                ) : null}
-              </div> */}
+              <div className="mt-0">
+                <img
+                  src={selectedAward.image}
+                  alt={selectedAward.title}
+                  className="w-full rounded-xl object-cover border"
+                  style={{ borderColor: "var(--border)" }}
+                />
+              </div>
+
             </motion.div>
           </motion.div>
         )}

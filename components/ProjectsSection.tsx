@@ -19,7 +19,7 @@ export default function ProjectsSection() {
             className="font-bold tracking-tight mb-0"
             style={{ fontFamily: "'Playfair Display', serif", fontSize: "15px", color: "var(--ink)" }}
           >
-            Recent Projects
+            Project Experience
           </h2>
         </div>
         <div className="p-6 flex flex-col gap-4">
