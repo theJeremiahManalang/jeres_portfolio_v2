@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { techStack, interests, profile } from "@/data/portfolio";
+import { techStack, profile } from "@/data/portfolio";
+import { toast } from "sonner";
 
 // Enhanced component with better UI/UX
 interface TechStackCategoryProps {
@@ -150,13 +151,18 @@ export default function RightSidebar() {
           <p className="text-[11px] leading-relaxed" style={{ color: "var(--ink-2)" }}>
             Impactful projects &amp; freelance work — let&rsquo;s build something together.
           </p>
-          <a
-            href={`mailto:${profile.email}`}
+          <button
+            type="button"
+            onClick={() => {
+              toast.success(`Wow, legit ba yan? HAHA. Kindly, email me at ${profile.email}. Thanks!`, {
+                duration: 5000,
+              });
+            }}
             className="inline-flex items-center gap-1 text-[11px] font-semibold mt-2 no-underline"
             style={{ color: "var(--accent)" }}
           >
             Contact me directly →
-          </a>
+          </button>
         </div>
 
         {/* Footer */}
